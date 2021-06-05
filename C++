@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+ bool eval(int a[],int b[])
+ {
+     int x[3];
+     for(int i=0;i<3;i++)
+        x[i]=a[i]-b[i];
+     if((x[0]>0 && x[1]>=0 && x[2]>=0) || (x[0]>=0 && x[1]>0 && x[2]>=0) || (x[0]>=0 && x[1]>=0 && x[2]>0)|| (x[0]<0 && x[1]<=0 && x[2]<=0) || (x[0]<=0 && x[1]<0 && x[2]<=0) || (x[0]<=0 && x[1]<=0 && x[2]<0))
+       return true;
+     return false;
+
+ }
+
+ int main()
+{
+
+   int t;
+   cin>>t;
+   while(t--)
+   {
+       int a[3],b[3],c[3];
+       for(int i=0;i<3;i++)
+        cin>>a[i];
+       for(int i=0;i<3;i++)
+        cin>>b[i];
+        for(int i=0;i<3;i++)
+        cin>>c[i];
+        if( eval(a,b) && eval(b,c) && eval(a,c))
+            cout<<"yes"<<endl;
+        else
+            cout<<"no"<<endl;
+
+   }
+
+}
